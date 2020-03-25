@@ -1,5 +1,5 @@
-
 import * as Type from "./actionsType";
+
 
 const INITIAL_STATE = [
   { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
@@ -8,7 +8,7 @@ const INITIAL_STATE = [
   { id: "id-4", name: "Annie Copeland", number: "227-91-26" }
 ];
 
-const phoneBookReducer = (state = INITIAL_STATE, {type, payload}) => {
+const phoneBookReducer = (state = INITIAL_STATE, { type, payload }) => {
   switch (type) {
     case Type.ADD_CONTACT:
       return [...state, payload];
@@ -16,17 +16,9 @@ const phoneBookReducer = (state = INITIAL_STATE, {type, payload}) => {
     case Type.DELETE_CONTACT:
       return state.filter(contact => contact.id !== payload.id);
 
-    // case Type.CHANGE_FILTER:
-    //   return state.filter(contact =>
-    //     contact.name.toLowerCase().includes(payload.filter.toLowerCase())
-    //   );
-
     default:
       return state;
   }
 };
-
-
-
 
 export default phoneBookReducer;
